@@ -12,7 +12,6 @@ public class CajeraThread extends Thread {
 
 	private long initialTime;
 
-	private Thread thread;
 
 	public CajeraThread() {
 	}
@@ -50,22 +49,24 @@ public class CajeraThread extends Thread {
 	@Override
 	public void run() {
 
-		System.out.println("La cajera " + this.nombre + " COMIENZA A PROCESAR LA COMPRA DEL CLIENTE " + this.cliente.getNombre() + " EN EL TIEMPO: " + (System.currentTimeMillis() - this.initialTime)
-				/ 1000 + "seg");
+		System.out.println("La cajera " + this.nombre + " COMIENZA A PROCESAR LA COMPRA DEL CLIENTE " 
+					+ this.cliente.getNombre() + " EN EL TIEMPO: " 
+					+ (System.currentTimeMillis() - this.initialTime) / 1000 
+					+ "seg");
 
 		for (int i = 0; i < this.cliente.getCarroCompra().length; i++) {
 			// Se procesa el pedido en X segundos
 			this.esperarXsegundos(cliente.getCarroCompra()[i]);
-			System.out.println("Procesado el producto " + (i + 1) + " del cliente " + this.cliente.getNombre() + "->Tiempo: " + (System.currentTimeMillis() - this.initialTime) / 1000 + "seg");
+			System.out.println("Procesado el producto " + (i + 1) 
+						+ " del cliente " + this.cliente.getNombre() + "->Tiempo: " 
+						+ (System.currentTimeMillis() - this.initialTime) / 1000 
+						+ "seg");
 		}
 
-		System.out.println("La cajera " + this.nombre + " HA TERMINADO DE PROCESAR " + this.cliente.getNombre() + " EN EL TIEMPO: " + (System.currentTimeMillis() - this.initialTime) / 1000 + "seg");
-	}
-	
-	@Override
-	public void start() {
-		thread = new Thread(this);
-		thread.start();
+		System.out.println("La cajera " + this.nombre + " HA TERMINADO DE PROCESAR " 
+						+ this.cliente.getNombre() + " EN EL TIEMPO: " 
+						+ (System.currentTimeMillis() - this.initialTime) / 1000 
+						+ "seg");
 	}
 
 	private void esperarXsegundos(int segundos) {

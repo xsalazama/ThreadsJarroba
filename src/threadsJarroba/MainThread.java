@@ -1,9 +1,5 @@
 package threadsJarroba;
 
-// http://www.stepwise.hk/npwiki/Lecture/JavaProgrammingTwo
-// http://www.tutorialspoint.com/java/java_multithreading.htm
-// http://docs.oracle.com/javase/6/docs/api/java/lang/Thread.html
-
 /**
  *
  * @author Richard
@@ -23,5 +19,4 @@ public class MainThread {
 		cajera1.start();
 		cajera2.start();
 	}
-
 }
